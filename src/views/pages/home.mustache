@@ -1,0 +1,38 @@
+{{>partials/header}}
+
+    Opa ,como vai {{ name }} {{lastname}} ?
+   {{#showOld}}
+   Como vai ?
+   {{/showOld}}
+
+    {{^showOld}}
+        Beleza?
+    {{/showOld}}
+
+    <hr/>
+    <h2>Produtos</h2>
+    <ul>
+    {{#products}}
+        {{>partials/productItem}}
+    {{/products}}
+    </ul>
+    <hr/>
+    
+    <h3>Produtos a partir de R$ 50</h3>
+    <ul>
+    {{#expensives}}
+        {{>partials/productItem}}
+    {{/expensives}}
+    </ul>
+    <hr/>
+
+
+    <ul>
+    {{#lista}}
+    <li>{{.}}</li>
+    {{/lista}}
+    {{^lista}}
+        Sem lista hj 
+    {{/lista}}
+    </ul>
+{{>partials/footer}}
